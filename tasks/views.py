@@ -1,10 +1,14 @@
 from django.shortcuts import render
 import datetime
 
-# Create your views here.
+tasks = ['foo', 'bar', 'baz']
 
 def index(request):
-    now = datetime.datetime.now()
-    return render(request, "tasks/index.html", {
-        'newyear': now.day == 18 and now.month == 8 
+    return render(request, 'tasks/index.html', {
+        "tasks": tasks
+    })
+
+def add(request):
+    return render(request, 'tasks/add.html', {
+        # 106
     })
